@@ -30,7 +30,8 @@ Frontend do CVS.
 %patch0 -p1
 
 %build
-(cd man/pcl-cvs; awk '/^\\input texinfo/ {print FILENAME}' * | xargs makeinfo)
+cd man/pcl-cvs
+awk '/^\\input texinfo/ {print FILENAME}' * | xargs makeinfo
 
 %install
 rm -rf $RPM_BUILD_ROOT
