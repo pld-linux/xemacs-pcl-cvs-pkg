@@ -20,7 +20,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 CVS frontend.
 
-%description -l pl 
+%description -l pl
 Frontend do CVS.
 
 %prep
@@ -38,7 +38,7 @@ cp -a * $RPM_BUILD_ROOT%{_datadir}/xemacs-packages
 mv -f  $RPM_BUILD_ROOT%{_datadir}/xemacs-packages/info/*.info* $RPM_BUILD_ROOT%{_infodir}
 rm -fr $RPM_BUILD_ROOT%{_datadir}/xemacs-packages/info
 
-gzip -9nf lisp/pcl-cvs/ChangeLog 
+gzip -9nf lisp/pcl-cvs/ChangeLog
 
 %clean
 rm -fr $RPM_BUILD_ROOT
