@@ -2,7 +2,7 @@ Summary:	CVS frontend
 Summary(pl):	Frontend do CVS
 Name:		xemacs-pcl-cvs-pkg
 %define 	srcname	pcl-cvs
-Version:	1.55
+Version:	1.56
 Release:	1
 License:	GPL
 Group:		Applications/Editors/Emacs
@@ -20,12 +20,14 @@ Requires:	xemacs-dired-pkg
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
+CVS frontend.
 
 %description -l pl 
+Frontend do CVS.
 
 %prep
 %setup -q -c
-#%patch0 -p1
+%patch0 -p1
 
 %build
 (cd man/pcl-cvs; awk '/^\\input texinfo/ {print FILENAME}' * | xargs makeinfo)
