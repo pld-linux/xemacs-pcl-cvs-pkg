@@ -2,7 +2,7 @@ Summary:	CVS frontend
 Summary(pl):	CVS frontend
 Name:		xemacs-pcl-cvs-pkg
 %define 	srcname	pcl-cvs
-Version:	1.50
+Version:	1.51
 Release:	1
 License:	GPL
 Group:		Applications/Editors/Emacs
