@@ -1,0 +1,25 @@
+diff -Nur xemacs-pcl-cvs-pkg-1.41/man/pcl-cvs/pcl-cvs.texi xemacs-pcl-cvs-pkg-1.41.new/man/pcl-cvs/pcl-cvs.texi
+--- xemacs-pcl-cvs-pkg-1.41/man/pcl-cvs/pcl-cvs.texi	Thu Oct 22 08:40:42 1998
++++ xemacs-pcl-cvs-pkg-1.41.new/man/pcl-cvs/pcl-cvs.texi	Sun Mar 26 14:25:12 2000
+@@ -20,11 +20,19 @@
+ @comment along with pcl-cvs; see the file COPYING.  If not, write to
+ @comment the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
+ 
+-@setfilename pcl-cvs.info
++@setfilename ../../info/pcl-cvs.info
+ @settitle Pcl-cvs - The Emacs Front-End to CVS
++
++
++@ifinfo
++@format
++@dircategory XEmacs Editor:
+ @direntry
+- * Pcl-cvs::            Emacs front-end to CVS
++* Pcl-cvs: (pcl-cvs).                   Emacs front-end to CVS
+ @end direntry
++@end format
++@end ifinfo
++
+ @setchapternewpage on
+      
+ @ifinfo
