@@ -1,34 +1,23 @@
-### Comment
-# This file is modified automatically by 'xemacs-adapter' script
-# from PLD-project CVS repository: cvs.pld.org.pl, module SPECS
-# For more details see comments in this script
-### EndComment
-
-Summary: 	CVS frontend.
-Summary(pl):	CVS frontend.
-
-Name:    	xemacs-pcl-cvs-pkg
+Summary:	CVS frontend
+Summary(pl):	CVS frontend
+Name:		xemacs-pcl-cvs-pkg
 %define 	srcname	pcl-cvs
-Version: 	1.41
+Version:	1.41
 Release:	1
-
-Patch0: 	xemacs-pcl-cvs-pkg-info.patch
-
-### Preamble
 License:	GPL
-Group:    	Applications/Editors/Emacs
+Group:		Applications/Editors/Emacs
 Group(pl):	Aplikacje/Edytory/Emacs
-URL:      	http://www.xemacs.org
-Source:   	ftp://ftp.xemacs.org/packages/%{srcname}-%{version}-pkg.tar.gz
-BuildRoot:	/tmp/%{name}-%{version}-root
+Source0:	ftp://ftp.xemacs.org/packages/%{srcname}-%{version}-pkg.tar.gz
+Patch0:		xemacs-pcl-cvs-pkg-info.patch
+URL:		http://www.xemacs.org/
 BuildArch:	noarch
 Conflicts:	xemacs-sumo
-Requires: 	xemacs
-Requires: 	xemacs-base-pkg
-Requires: 	xemacs-elib-pkg
-Requires: 	xemacs-dired-pkg
-Prereq:  	/usr/sbin/fix-info-dir
-### EndPreamble
+Requires:	xemacs
+Requires:	xemacs-base-pkg
+Requires:	xemacs-elib-pkg
+Requires:	xemacs-dired-pkg
+Prereq:		/usr/sbin/fix-info-dir
+BuildRoot:	/tmp/%{name}-%{version}-root
 
 %description
 
@@ -36,7 +25,6 @@ Prereq:  	/usr/sbin/fix-info-dir
 %description -l pl 
 
 
-### Main
 %prep
 %setup -q -c
 %patch0 -p1
@@ -46,31 +34,27 @@ Prereq:  	/usr/sbin/fix-info-dir
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_datadir}/xemacs-packages
+install -d $RPM_BUILD_ROOT{%{_datadir}/xemacs-packages,%{_infodir}}
+
 cp -a * $RPM_BUILD_ROOT%{_datadir}/xemacs-packages
-install -d $RPM_BUILD_ROOT%{_infodir}
 mv -f  $RPM_BUILD_ROOT%{_datadir}/xemacs-packages/info/*.info* $RPM_BUILD_ROOT%{_infodir}
 rm -fr $RPM_BUILD_ROOT%{_datadir}/xemacs-packages/info
-gzip -9nf $RPM_BUILD_ROOT%{_infodir}/*.info*
-gzip -9nf lisp/pcl-cvs/ChangeLog 
+
+gzip -9nf $RPM_BUILD_ROOT%{_infodir}/*.info* \
+	lisp/pcl-cvs/ChangeLog 
 
 %clean
 rm -fr $RPM_BUILD_ROOT
-### EndMain
 
-### PrePost
 %post
-/usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
+%{_sbindir}/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
 %postun
-/usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
-### EndPrePost
+%{_sbindir}/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
-### Files
 %files
 %defattr(644,root,root,755)
+%doc lisp/pcl-cvs/ChangeLog.gz
 %{_infodir}/*
 %dir %{_datadir}/xemacs-packages/lisp/*
 %{_datadir}/xemacs-packages/lisp/*/*.elc
-%doc lisp/pcl-cvs/ChangeLog.gz 
-### EndFiles
