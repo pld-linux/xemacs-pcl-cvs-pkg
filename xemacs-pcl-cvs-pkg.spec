@@ -6,8 +6,6 @@ Version:	1.56
 Release:	1
 License:	GPL
 Group:		Applications/Editors/Emacs
-Group(de):	Applikationen/Editors/Emacs
-Group(pl):	Aplikacje/Edytory/Emacs
 Source0:	ftp://ftp.xemacs.org/xemacs/packages/%{srcname}-%{version}-pkg.tar.gz
 Patch0:		%{name}-info.patch
 URL:		http://www.xemacs.org/
