@@ -1,5 +1,5 @@
 Summary:	CVS frontend
-Summary(pl.UTF-8):   Frontend do CVS
+Summary(pl.UTF-8):	Frontend do CVS
 Name:		xemacs-pcl-cvs-pkg
 %define 	srcname	pcl-cvs
 Version:	1.65
