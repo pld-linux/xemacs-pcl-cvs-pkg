@@ -45,7 +45,7 @@ rm -fr $RPM_BUILD_ROOT%{_datadir}/xemacs-packages/info
 find $RPM_BUILD_ROOT -type f -name "*.el" | while read i; do test ! -f ${i}c || rm -f $i; done
 
 %clean
-rm -fr $RPM_BUILD_ROOT
+rm -rf $RPM_BUILD_ROOT
 
 %post	-p	/sbin/postshell
 -/usr/sbin/fix-info-dir -c %{_infodir}
