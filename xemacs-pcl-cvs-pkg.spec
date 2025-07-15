@@ -27,7 +27,7 @@ Frontend do CVS.
 
 %prep
 %setup -q -c
-%patch0 -p1
+%patch -P0 -p1
 
 %build
 cd man/pcl-cvs
