@@ -1,5 +1,5 @@
---- xemacs-pcl-cvs-pkg-1.56/man/pcl-cvs/pcl-cvs.texi.orig	Wed Mar 14 16:02:46 2001
-+++ xemacs-pcl-cvs-pkg-1.56/man/pcl-cvs/pcl-cvs.texi	Mon Jan  7 19:08:10 2002
+--- a/man/pcl-cvs/pcl-cvs.texi	2018-07-29 11:53:35.000000000 +0200
++++ b/man/pcl-cvs/pcl-cvs.texi	2026-03-15 22:19:28.568988705 +0100
 @@ -21,11 +21,18 @@
  @c along with pcl-cvs; see the file COPYING.  If not, write to
  @c the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
@@ -20,4 +20,4 @@
 +
  @setchapternewpage on
       
- @ifinfo
+ @ifnottex
